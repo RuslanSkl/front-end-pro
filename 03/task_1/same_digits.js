@@ -8,7 +8,6 @@ if (digit1 == digit2 && digit2 == digit3 && digit1 == digit3) {
 else if  (digit1 == digit2 || digit2 == digit3 || digit1 == digit3) { 
     console.log("Есть одинаковые цифры"); 
 }
-
 else {
     console.log("Одинаковых цифр нет");
 }
