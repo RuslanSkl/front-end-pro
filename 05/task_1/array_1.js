@@ -7,7 +7,7 @@ while (true) {
     arr.push(arrData);
 }
 console.log(arr);
-arr.sort();
+arr.sort(function(a, b) { return a - b; });
 console.log(arr);
 arr.splice(2, 3);
 console.log(arr);
