@@ -39,7 +39,6 @@ arr.forEach(function(item) {
 }); 
 console.log ('Сумма четных положительных элементов =' + ' ' + sumEvenPosElem);
 
-
 let newArr = arr.filter(function(item) {
     return (item >= 0);
 });
@@ -48,19 +47,16 @@ let multipPosElem = newArr.reduce(function(prev, value) {
 }, 1);
 console.log ('Произведение положительных элементов =' + ' ' + multipPosElem);
 
+const bigStayRestZeroing = arr.map(function(item) {
+    if (item == maxElement){
+        return item;
+    } else {
+        return 0;
+    }
+});
+console.log (bigStayRestZeroing);
 
 
 
-// let max = arr[0];
-// let maxi = 0;
-// for (let i = 1; i < arr.length; i++) {
-//     if (arr[i] > max) {
-//         max = arr[i];      
-//         arr[maxi] = 0;
-//         maxi = i;
-//     } else {
-//     arr[i] = 0;
-//     }
-// }
 
 
