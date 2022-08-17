@@ -1,12 +1,15 @@
 let arr = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, 235, 4, 47, 5];
 
-let sumPosValues = 0;
-arr.forEach(function(item) {
-    if (item >= 0) {
-       sumPosValues += item; 
-    }
-});
-console.log ('Сумма положительных значений =' + ' ' + sumPosValues);
+// let sumPosValues = 0;
+// arr.forEach(function(item) {
+//     if (item >= 0) {
+//        sumPosValues += item; 
+//     }
+// });
+// console.log ('Сумма положительных значений =' + ' ' + sumPosValues);
+
+let sum = arr.filter(item => item >= 0).reduce((a, b) => a + b, 0);
+console.log('Сумма положительных значений =' + ' ' + sum);
 
 let amountPosElem = arr.filter(function(item) {
     return item >= 0;
@@ -48,11 +51,7 @@ let multipPosElem = newArr.reduce(function(prev, value) {
 console.log ('Произведение положительных элементов =' + ' ' + multipPosElem);
 
 const bigStayRestZeroing = arr.map(function(item) {
-    if (item == maxElement){
-        return item;
-    } else {
-        return 0;
-    }
+    return item == maxElement ? item : 0;
 });
 console.log (bigStayRestZeroing);
 
