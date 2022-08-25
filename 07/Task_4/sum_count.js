@@ -1,10 +1,7 @@
-function sumDigits() {
-    let sum = 0;
-    return function (a) {
-        sum += a;
-        return sum;
-    }
+let acc = 0;
+function counter(value) {
+    return acc += value;
 };
-let addSum = sumDigits();
-console.log(addSum(5));
-console.log(addSum(7));
+console.log(counter(5));
+console.log(counter(7));
+
