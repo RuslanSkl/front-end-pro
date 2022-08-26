@@ -1,3 +1,4 @@
+"use strict";
 const firstBtn = document.querySelector(".btn-get");
 const secondBtn = document.querySelector(".btn-push");
 let userUrl;

@@ -1,3 +1,4 @@
+"use strict";
 function onButtonClick() {
   const colorBlue = "newcolor";
   const textInPar = document.querySelector(".text");
