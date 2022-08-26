@@ -1,50 +1,56 @@
 function User(name, age) {
   this.name = name,
   this.age = age,
-  this.info = function () {
-      alert ("Hi " + this.name + " \nYour age is: " + this.age);
-    };
+  this.isValidName = isValidName(name);
+  this.isValidAge = isValidAge(age);
+  this.info = () => {
+    if(this.isValidName && this.isValidAge) alert (`Hi ${this.name}; Your age is: ${this.age}`);
+  }
+  function isValidName(name) {
+    return !!name;
+  }
+  if(!this.isValidName) alert('Name is invalid');
+
+  function isValidAge(age) {
+    return age && !isNaN(age) && age >= 18;
+  }
+  if(!this.isValidAge) alert('Age is invalid');
 };
-
-let newUser;
-do {
-  newUser = prompt("Enter owner name:");
-} while (!newUser)
-let userAge;
-do {
-  userAge = +prompt("Enter owner age:");
-} while (userAge < 18 || !userAge || isNaN(userAge));
-
-const owner = new User(newUser, userAge);
+const name = prompt("Enter a user name:");
+const age = prompt("Enter a user age:");
+const owner = new User(name, age);
 owner.info();
 
 function Automobile(model, year, mileage) {
   this.model = model,
   this.year = year,
   this.mileage = mileage,
-  this.carInfo = function () {
-      alert ("Car model is: " + this.model + " \nYear of production is: " + this.year + " \nMileage is: " + this.mileage);
-    };
-  this.updateOwner = function () {
-    alert(`New owner of the car is: ${owner.name}`);
-  };
+  this.owner = null,
+  this.isValidYear = isValidYear(year);
+  this.isValidMileage = isValidMileage(mileage);
+  
+  function isValidYear(year) {
+    return year && !isNaN(year) && year > 0;
+  }
+  if (!this.isValidYear) alert('Automobile year is invalid');
+  
+  function isValidMileage(mileage) {
+    return mileage && !isNaN(mileage) && mileage > 0;
+  }
+  if (!this.isValidMileage) alert('Automobile mileage is invalid');
+  if (!this.model) alert('Automobile model is empty');
+  this.carInfo = () => {
+        if (this.isValidYear && this.isValidMileage && this.model)
+          alert(`Car model is ${this.model}; Year of production is: ${this.year}; Mileage is: ${this.mileage}`);
+  }
+  this.updateOwner = (owner) => {this.owner = owner;}
+  if(this.owner && !!this.owner.name) {alert(`Car owner is ${this.owner.name}`);} 
 };
-let newCar;
-do {
-  newCar = prompt("Enter a car model:");
-} while (!newCar);
-let newYearOfProduction;
-do {
-  newYearOfProduction = +prompt("Enter a year of production:");
-} while (!newYearOfProduction || isNaN(newYearOfProduction) || newYearOfProduction < 1900);
-let newMileage;
-do {
-  newMileage = +prompt("Enter a car mileage:");
-} while (!newMileage || isNaN(newMileage) || newMileage < 0);
-
-const ownerCar = new Automobile(newCar, newYearOfProduction, newMileage);
+const model = prompt("Enter a automobile model:");
+const year = prompt("Enter a automobile year:");
+const mileage = prompt("Enter a automobile mileage:");
+const ownerCar = new Automobile(model, year, mileage);
 ownerCar.carInfo();
-
 ownerCar["newOwner"] = owner;
 console.log(ownerCar);
 ownerCar.updateOwner();
