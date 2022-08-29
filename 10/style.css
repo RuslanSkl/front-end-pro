@@ -1,0 +1,34 @@
+* {
+    background-color: rgb(198, 228, 205);
+}
+
+.slider {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#prev, #next {
+    background-color: #86c73b;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 10px 10px 5px grey;
+}
+
+#prev:hover {
+    background-color: white;
+    color: #86c73b;
+}
+
+#next:hover {
+    background-color: white;
+    color: #86c73b;
+}
