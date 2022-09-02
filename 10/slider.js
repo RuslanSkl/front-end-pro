@@ -8,7 +8,7 @@ img.src = "img/" + images[0];
 let i = 0;
 btnNext.addEventListener("click", function () {
   ++i;
-  if (i > images.length - 1) {
+  if (i >= images.length - 1) {
     i = 0;
   }
   img.src = "img/" + images[i];
@@ -22,7 +22,3 @@ btnPrev.addEventListener("click", function () {
   img.src = "img/" + images[i];
   console.log("User click `Prev` button");
 });
-
-const website = document.querySelector("body").addEventListener("click", function () {
-    console.log('User click on website');
-    });
