@@ -60,6 +60,7 @@ todoForm.addEventListener("submit", function (event) {
     btnDelete.remove();
     taskWrapper.remove();
   });
+  todoForm.elements.task.value = "";
 });
 
 todoForm.querySelectorAll("input").forEach(function (input) {
@@ -69,5 +70,4 @@ todoForm.querySelectorAll("input").forEach(function (input) {
       .querySelectorAll(".errorText")
       .forEach((error) => error.remove());
   });
-  todoForm.elements.task.value = "";
 });
