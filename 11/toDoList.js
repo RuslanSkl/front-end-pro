@@ -69,4 +69,5 @@ todoForm.querySelectorAll("input").forEach(function (input) {
       .querySelectorAll(".errorText")
       .forEach((error) => error.remove());
   });
+  todoForm.elements.task.value = "";
 });
