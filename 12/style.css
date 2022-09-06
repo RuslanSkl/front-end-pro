@@ -32,7 +32,7 @@ body {
 
 .todoList {
     width: 40%;
-    top: 30%;
+    top: 20%;
     left: 30%;
     background: white;
     border-radius: 10px;
@@ -176,4 +176,22 @@ input[type=checkbox]:checked:after {
     position: absolute;
     top: 2px;
     left: 6px;
+}
+
+.select-color {
+    display: flex;
+    padding-left: 20px;
+
+}
+
+select {
+    width: 20%;
+    height: 45px;
+    padding: 12px;
+    color: #111111;
+    font-weight: 500;
+    position: relative;
+    border-radius: 5px;
+    font-size: 15px;
+    border: 2px solid #d1d3d4;
 }

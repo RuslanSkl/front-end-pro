@@ -68,7 +68,6 @@ todoForm.addEventListener("submit", function (event) {
     } else {
       wrapper.querySelector("p").classList.remove("doneTask");
     }
-
   });
 
   btnDelete.addEventListener("click", function () {
@@ -99,28 +98,30 @@ const filter = document.querySelector(".mySelect");
 filter.addEventListener("change", filterTodo);
 
 function filterTodo(e) {
-  const filterTask = Array.from(tasksArray);
-  console.log(filterTask);
-  filterTask.forEach(function (elements) {
+  const filterElement = taskList.querySelectorAll("p");
+  console.log(filterElement);
+  filterElement.forEach(function (element) {
+    const targetElement = element.parentElement;
     switch (e.target.value) {
       case "all":
-      elements.style.display = "";
-      break;
-    
-      case "inProgres":
-      if (!elements.classList.contains("doneTask")) {
-      elements.style.display = "flex";
-      } else {
-      elements.style.display = "none"
-      }
-      break;
-     
+        targetElement.style.display = "";
+        break;
+
       case "done":
-      if (elements.classList.contains("doneTask")) {
-      elements.style.display = "flex";
-      } else {
-      elements.style.display = "none"  
-      }
-    }      
+        if (element.classList.contains("doneTask")) {
+          targetElement.style.display = "";
+        } else {
+          targetElement.style.display = "none";
+        }
+        break;
+
+      case "inProgres":
+        if (element.classList.contains("doneTask")) {
+          targetElement.style.display = "none";
+        } else {
+          targetElement.style.display = "";
+        }
+        break;
+    }
   });
 }
