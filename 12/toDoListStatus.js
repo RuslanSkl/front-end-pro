@@ -96,26 +96,31 @@ todoForm.querySelectorAll("input").forEach(function (input) {
 });
 
 const filter = document.querySelector(".mySelect");
-filter.addEventListener("change", filterTodos);
+filter.addEventListener("change", filterTodo);
 
-function filterTodos(e) {
-  const todos = Array.from(document.querySelectorAll(".taskList", ".taskWrapper"));
-  console.log(todos);
-  todos.forEach(function (todo) {
-    console.log(todo);
+function filterTodo(e) {
+  const filterTask = Array.from(tasksArray);
+  console.log(filterTask);
+  filterTask.forEach(function (elements) {
     switch (e.target.value) {
       case "all":
-        todo.style.display = "";
-        break;
-        case "done":
-          if (todo.classList.contains("doneTask")) {
-            todo.style.display = "";
-          } else {
-            todo.style.display = "none";
-          }
-          }
-    });
-  }
-  
-  
- 
+      elements.style.display = "";
+      break;
+    
+      case "inProgres":
+      if (!elements.classList.contains("doneTask")) {
+      elements.style.display = "flex";
+      } else {
+      elements.style.display = "none"
+      }
+      break;
+     
+      case "done":
+      if (elements.classList.contains("doneTask")) {
+      elements.style.display = "flex";
+      } else {
+      elements.style.display = "none"  
+      }
+    }      
+  });
+}
