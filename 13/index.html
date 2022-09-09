@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>To Do List Local Storage</title>
+  </head>
+  <body>
+    <div class="todoList">
+      <h1>To Do List</h1>
+      <form id="todo" class="form" name="todo">
+        <div id="fieldWrapper">
+          <input
+            name="task"
+            type="text"
+            class="field"
+            maxlength="40"
+            placeholder="Please enter a task..."
+          />
+          <button class="btnAdd" type="submit">Add new task</button>
+        </div>
+        <div class="select-color">
+          <select class="mySelect">
+            <option value="all">All</option>
+            <option value="inProgres">In progres</option>
+            <option value="done">Done</option>
+          </select>
+        </div>
+      </form>
+      <div class="taskList"></div>
+    </div>
+    <script src="toDoListLocalStorage.js"></script>
+  </body>
+</html>

@@ -51,9 +51,14 @@ todoForm.addEventListener("submit", function (event) {
   btnDelete.setAttribute("class", "btnDelete");
   btnDelete.innerText = "Delete task";
 
+  const btnEdit = document.createElement("button");
+  btnEdit.setAttribute("class", "btnEdit");
+  btnEdit.innerText = "Edit";
+
   taskWrapper.append(checkbox);
   taskWrapper.append(text);
   taskWrapper.append(btnDelete);
+  taskWrapper.append(btnEdit);
 
   taskList.append(taskWrapper);
 

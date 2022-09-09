@@ -3,7 +3,7 @@ const todoForm = document.forms.todo;
 const taskList = document.querySelector(".taskList");
 const errorClass = "error";
 
-function getErrorElement(message) {
+function createErrorElement(message) {
   const errorMsg = document.createElement("p");
   errorMsg.classList.add("errorText");
   errorMsg.textContent = message;
@@ -11,8 +11,9 @@ function getErrorElement(message) {
 }
 
 function addErrorMessage(inputElemnt, message) {
+  if (inputElemnt.classList.contains(errorClass)) return;
   inputElemnt.classList.add(errorClass);
-  const error = getErrorElement(message);
+  const error = createErrorElement(message);
   inputElemnt.closest("#fieldWrapper").before(error);
 }
 
@@ -45,19 +46,15 @@ todoForm.addEventListener("submit", function (event) {
   taskList.append(taskWrapper);
 
   checkbox.addEventListener("change", function () {
+    const textTask = this.closest(".taskWrapper").querySelector("p");
     if (this.checked) {
-      this.closest(".taskWrapper").querySelector("p").classList.add("doneTask");
+      textTask.classList.add("doneTask");
     } else {
-      this.closest(".taskWrapper")
-        .querySelector("p")
-        .classList.remove("doneTask");
+      textTask.classList.remove("doneTask");
     }
   });
 
   btnDelete.addEventListener("click", function () {
-    text.remove();
-    checkbox.remove();
-    btnDelete.remove();
     taskWrapper.remove();
   });
   todoForm.elements.task.value = "";
