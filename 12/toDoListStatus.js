@@ -33,7 +33,6 @@ todoForm.addEventListener("submit", function (event) {
   };
 
   tasksArray.push(newTask);
-  console.log(tasksArray);
 
   const taskWrapper = document.createElement("div");
   taskWrapper.classList.add("taskWrapper");
@@ -78,7 +77,6 @@ todoForm.addEventListener("submit", function (event) {
     const index = tasksArray.indexOf(task);
     tasksArray.splice(index, 1);
     taskWrapper.remove();
-    console.log(tasksArray);
   });
   todoForm.elements.task.value = "";
 });
