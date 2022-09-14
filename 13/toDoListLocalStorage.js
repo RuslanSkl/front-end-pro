@@ -46,9 +46,6 @@ todoForm.addEventListener("submit", function (event) {
   tasksArray.push(newTask);
 
   setToLS("tasksArray", tasksArray);
-  const newTasksArray = getFromLs("tasksArray");
-  console.log(newTasksArray);
-  setToLS("newTasksArray", newTasksArray);
 
   const taskWrapper = document.createElement("div");
   taskWrapper.classList.add("taskWrapper");
@@ -88,6 +85,8 @@ todoForm.addEventListener("submit", function (event) {
     } else {
       wrapper.querySelector("p").classList.remove("doneTask");
     }
+    getFromLs("tasksArray");
+    setToLS("tasksArray", tasksArray);
   });
 
   btnEdit.addEventListener("click", function () {
@@ -98,6 +97,8 @@ todoForm.addEventListener("submit", function (event) {
     const task = tasksArray.find((taskItem) => taskItem.id == id);
     task.name = prompt();
     p.innerText = task.name;
+    getFromLs("tasksArray");
+    setToLS("tasksArray", tasksArray);
   });
 
   btnDelete.addEventListener("click", function () {
@@ -107,6 +108,8 @@ todoForm.addEventListener("submit", function (event) {
     const index = tasksArray.indexOf(task);
     tasksArray.splice(index, 1);
     taskWrapper.remove();
+    getFromLs("tasksArray");
+    setToLS("tasksArray", tasksArray);
   });
   todoForm.elements.task.value = "";
 });
