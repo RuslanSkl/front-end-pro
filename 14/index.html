@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Regular Expressions</title>
+  </head>
+  <body>
+    <form class="form" name="newUser">
+      <p id="first-input">Please, enter your name and surname</p>
+      <input name="name" id="name" required />
+      <p id="second-input">
+        Please, enter your phone number in format: +380671234567
+      </p>
+      <input name="number" id="number" required maxlength="13" />
+      <p id="third-input">Please, enter your e-mail</p>
+      <input name="email" id="email" required />
+      <p id="fourth-input">Enter your credit/debit card (16 digits)</p>
+      <input name="card" id="card" required maxlength="16" />
+      <button id="btn" type="submit">Submit</button>
+    </form>
+    <script src="regularExp.js"></script>
+  </body>
+</html>
