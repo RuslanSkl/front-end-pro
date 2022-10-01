@@ -73,7 +73,7 @@ todoForm.addEventListener("submit", function (event) {
   btnDelete.addEventListener("click", function () {
     const wrapper = this.closest(".taskWrapper");
     const id = wrapper.getAttribute("data-id");
-    const task = tasksArray.find((taskItem) => taskItem.id == id);
+    const task = tasksArray.filter((taskItem) => taskItem.id == id);
     const index = tasksArray.indexOf(task);
     tasksArray.splice(index, 1);
     taskWrapper.remove();
