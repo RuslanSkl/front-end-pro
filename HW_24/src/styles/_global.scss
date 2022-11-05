@@ -1,0 +1,19 @@
+$primaryColor: red;
+$secondaryColor: blue;
+
+html {
+    font-family: generalFont;
+}
+
+h1 {
+    color: red;
+}
+
+.container {
+    background: url(../images/js.png);
+    &__subheader {
+     color: $secondaryColor;
+     display: flex;
+     justify-content: center;   
+    } 
+}
