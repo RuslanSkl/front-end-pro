@@ -1,4 +1,7 @@
 import "./styles/index.scss";
+import $ from "jquery";
+import * as bootstrap from "bootstrap"; // Я так понимаю данное подключение не работает и выдает ошибку поэтому я подключил модуль в html файле
+
 
 const objPerson = {
     name: "Ruslan",
@@ -10,5 +13,7 @@ const finalObj = {
     language: 'JS',
     framework: "React",
 };
+
+$(".block").text("Hello from jquery");
 
 console.log(finalObj);
